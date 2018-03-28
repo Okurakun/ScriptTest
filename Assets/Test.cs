@@ -2,7 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*public class Test : MonoBehaviour
+public class Magical
+{
+
+    int mp = 53;
+
+
+    public void Magic(int mpdamage)
+    {
+        if (mp >= mpdamage)
+        {
+            mp -= mpdamage;
+            Debug.Log("魔法攻撃をした。残りMPは" + mp);
+        }
+        else
+        {
+            Debug.Log("MPが足りないため魔法が使えない。");
+        }
+    }
+
+}
+
+public class Test : MonoBehaviour
 {
     void Start()
     {
@@ -13,64 +34,23 @@ using UnityEngine;
             Debug.Log(array[i]);
         }
 
-        for (int i = 5; i <= array.Length; i--)
-
-
+        for (int i = 5; i > -1; i--)
         {
             Debug.Log(array[i]);
-
-            if (i == 0)
-                break;
         }
 
+        Magical magical = new Magical();
 
 
+        for (int i = 0; i < 11; i++)
+        {
+            magical.Magic(5);
+        }
     }
-    */
 
-    public class Magical
+    // Update is called once per frame
+    void Update()
     {
 
-        int mp = 53;
-
-
-        public void Magic(int mpdamage)
-        {
-            mp -= mpdamage;
-
-            if (mp >= 3)
-            {
-                Debug.Log("魔法攻撃をした。残りMPは" + mp);
-            }
-            else
-            {
-                Debug.Log("MPが足りないため魔法が使えない。");
-            }
-
-        }
-
     }
-
-    public class Test : MonoBehaviour
-    {
-
-        void Start()
-        {
-
-            Magical magical = new Magical();
-
-
-            for (int i = 0; i < 11; i++)
-            {
-                magical.Magic(5);
-            }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-    }
-
- 
+}
